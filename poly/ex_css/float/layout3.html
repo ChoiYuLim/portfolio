@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>layout03</title>
+    <style>
+        /* 여백 초기화 */
+        body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset, legend, p, select, table, th, td, tr, textarea, button, form {margin: 0; padding: 0;}
+    
+
+        body {
+            background-color: rgb(143, 241, 167);
+        }
+
+        #wrap {
+            width: 800px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .side {
+            width: 20%;
+            min-height: auto;
+            background-color: green;
+            color: white;
+            text-transform: uppercase;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            float: left;
+        }
+
+        .main{
+            width: 80%;
+            min-height: auto;
+            display: block;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header {
+            margin: 0 auto;
+            width: 80%;
+            min-height: 10rem;
+            background-color: rgb(17, 92, 21);
+            color: white;
+            align-items: center;
+            display: flex;
+            float: left;
+            justify-content: center;
+            text-transform: uppercase;
+        }
+
+        .contents {
+            margin: 0 auto;
+            width: 80%;
+            min-height: 10rem;
+            background-color: green;
+            float: left;
+            color: white;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            margin: 0 auto;
+            width: 80%;
+            min-height: 10rem;
+            background-color: rgb(17, 92, 21);
+            float: left;
+            color: white;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="side">side</div>
+        <div class="main">
+            <div class="header">header</div>
+            <div class="contents">Lorem ipsum dolor sit amet cosectetur adipisicing elit. Labore beatae consectetur
+                minimatae velit doloresxpedita dignissimos, molestiae eos, placeat natus quae? Saepe consequatur beatae atque nesciunt fugit,
+                asperiores facilis?nsectetur adipisicing elit. Labore beatae consectetur minima vitae velit dolores
+                expeditLorem ipsum dolor sit amet cosectetur adipisicing elit. Labore beatae consectetur
+                minimatae velit doloresxpedita dignissimos, molestiae eos, placeat natus quae? Saepe consequatur beatae atque nesciunt fugit,
+                asperiores facilis?nsectetur adipisicing elit. Labore beatae consectetur minima vitae velit dolores
+                expeditLorem ipsum dolor sit amet cosectetur adipisicing elit. Labore beatae consectetur
+                minimatae velit doloresxpedita dignissimos, molestiae eos, placeat natus quae? Saepe consequatur beatae atque nesciunt fugit,
+                asperiores facilis?nsectetur adipisicing elit. Labore beatae consectetur minima vitae velit dolores
+                expedit
+            </div>
+            <div class="footer">footer</div>
+        </div>
+    </div>
+</body>
+
+</html>
