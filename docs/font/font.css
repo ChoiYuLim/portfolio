@@ -1,9 +1,0 @@
-@font-face {
-    src : url("./Hana2.0_TTF/Hana2-Bold.ttf");
-
-    font-family: "hana-bold"
-}
-
-h1 {
-  font-family: "hana-bold";
-}
