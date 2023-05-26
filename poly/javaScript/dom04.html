@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // 문서에서 btn-message 클래스 속성을 가진 태그를 찾아주세요.
+            // 만일 여러개가 있으면, 첫번째 것으로 찾아주세요.
+            let button = document.querySelector(".btn-message");
+            console.log(button);
+
+            // 그 버튼에 이벤트를 추가해 주세요.
+            // 이벤트 동작의 종류는 클릭입니다.
+            // 버튼을 클릭하게 되면, 전달한 익명함수를 실행해주세요.
+            button.addEventListener('click',function(){
+                alert("반갑습니다.");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button class="btn-message">메세지</button>
+
+    <div class="message">
+        오늘은 화창한 날씨네요.
+    </div>
+</body>
+
+</html>

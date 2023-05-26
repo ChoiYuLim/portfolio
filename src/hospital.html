@@ -1,3 +1,634 @@
 ---
 layout: base
 ---
+
+<!-- * 카카오맵 - 지도퍼가기 -->
+<!-- 1. 지도 노드 -->
+<div id="daumRoughmapContainer" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+<!--
+	2. 설치 스크립트
+	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+-->
+<script charset="UTF-8" class="daum_roughmap_loader_script"
+    src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+<!-- 3. 실행 스크립트 -->
+<script charset="UTF-8">
+    new daum.roughmap.Lander({
+        "timestamp": "1684998254662",
+        "key": "2ewua",
+        "mapWidth": "640",
+        "mapHeight": "360"
+    }).render();
+
+    // 마커를 추가할 위치의 좌표 정보
+    var locations = [
+        {
+            title: '장소 1',
+            latlng: new daum.maps.LatLng(37.498084, 127.027548)
+        },
+        {
+            title: '장소 2',
+            latlng: new daum.maps.LatLng(37.492396, 127.029464)
+        },
+        // 추가적인 위치들을 위해 위의 코드를 복사하여 붙여넣기하여 계속해서 추가할 수 있습니다.
+    ];
+
+    // 지도 생성
+    var mapContainer = document.getElementById('daumRoughmapContainer');
+    var mapOption = {
+        center: new daum.maps.LatLng(37.4965, 127.0282), // 지도 중심 좌표
+        level: 3 // 지도 확대 레벨
+    };
+    var map = new daum.maps.Map(mapContainer, mapOption);
+
+    // 마커 추가
+    for (var i = 0; i < locations.length; i++) {
+        var marker = new daum.maps.Marker({
+            position: locations[i].latlng,
+            map: map
+        });
+
+        var infowindow = new daum.maps.InfoWindow({
+            content: '<div style="padding:5px;">' + locations[i].title + '</div>'
+        });
+        infowindow.open(map, marker);
+    }
+</script>
+
+
+<div class="table-type01 play" id="mapskip">
+    <table>
+        <caption>
+            우리동네 병원 목록 : 시설, 관할구청, 위치, 전화번호로 구성
+        </caption>
+        <colgroup>
+            <col style="width: 20%">
+            <col style="width: 15%">
+            <col style="width: 45%">
+            <col style="width: 20%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">시설</th>
+                <th scope="col">관할구청</th>
+                <th scope="col">위치</th>
+                <th scope="col">전화번호</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="title">누리봄동물병원</td>
+                <td>종로구</td>
+                <td>종로구 사직로12길 2</td>
+                <td>02-735-7530</td>
+            </tr>
+            <tr>
+                <td class="title">광화문동물병원</td>
+                <td>종로구</td>
+                <td>서울 종로구 자하문로 35-3 101호</td>
+                <td>02-722-8275</td>
+            </tr>
+            <tr>
+                <td class="title">웰니스클리닉(청계천점)</td>
+                <td>중구</td>
+                <td>중구 청계천로 400 이마트 청계천점 지하1층</td>
+                <td>02-2234-7585</td>
+            </tr>
+            <tr>
+                <td class="title">웰펫동물병원</td>
+                <td>중구</td>
+                <td>서울 중구 동호로 178</td>
+                <td>02-2256-7582</td>
+            </tr>
+            <tr>
+                <td class="title">바우미우동물병원</td>
+                <td>중구</td>
+                <td>서울 중구 다산로 175 (신당동)</td>
+                <td>02-2237-3366</td>
+            </tr>
+            <tr>
+                <td class="title">남산동물병원</td>
+                <td>용산구</td>
+                <td>용산구 후암로 51</td>
+                <td>02-778-7582</td>
+            </tr>
+            <tr>
+                <td class="title">원효종합동물병원</td>
+                <td>용산구</td>
+                <td>서울 용산구 새창로 122-2</td>
+                <td>02-719-7070</td>
+            </tr>
+            <tr>
+                <td class="title">아지동물병원</td>
+                <td>성동구</td>
+                <td>성동구 독서당로 289</td>
+                <td>02-6085-7750</td>
+            </tr>
+            <tr>
+                <td class="title">바우라움동물병원</td>
+                <td>성동구</td>
+                <td>서울 성동구 왕십리로 241 파크애비뉴 엔터식스4층</td>
+                <td>02-6454-6182</td>
+            </tr>
+            <tr>
+                <td class="title">광진동물의료센터</td>
+                <td>광진구</td>
+                <td>광진구 광나루로 507</td>
+                <td>02-457-4545</td>
+            </tr>
+            <tr>
+                <td class="title">다온동물병원</td>
+                <td>광진구</td>
+                <td>서울 광진구 면목로 142</td>
+                <td>02-499-7582</td>
+            </tr>
+            <tr>
+                <td class="title">로얄 도그앤캣 메디컬센터</td>
+                <td>광진구</td>
+                <td>서울 광진구 능동로 49 (자양동)</td>
+                <td>02-468-6612</td>
+            </tr>
+            <tr>
+                <td class="title">보람동물병원</td>
+                <td>광진구</td>
+                <td>서울 광진구 군자로 84</td>
+                <td>02-465-7582</td>
+            </tr>
+            <tr>
+                <td class="title">서울동물병원</td>
+                <td>광진구</td>
+                <td>서울 광진구 천호대로 623-1</td>
+                <td>02-2038-8253</td>
+            </tr>
+            <tr>
+                <td class="title">아이본동물병원</td>
+                <td>광진구</td>
+                <td>광진구 자양로 48 1층 104호</td>
+                <td>02-455-5975</td>
+            </tr>
+            <tr>
+                <td class="title">뉴월드동물병원</td>
+                <td>동대문구</td>
+                <td>서울 동대문구 한천로 94 1층</td>
+                <td>02-2212-5233</td>
+            </tr>
+            <tr>
+                <td class="title">땅콩동물병원</td>
+                <td>동대문구</td>
+                <td>서울 동대문구 답십리로 224-1 1층</td>
+                <td>02-3394-7075</td>
+            </tr>
+            <tr>
+                <td class="title">제연동물병원</td>
+                <td>동대문구</td>
+                <td>서울 동대문구 답십리로 77 1층</td>
+                <td>02-2242-7975</td>
+            </tr>
+            <tr>
+                <td class="title">진서동물병원</td>
+                <td>중랑구</td>
+                <td>서울 중랑구 신내로10길 7 (신내동)</td>
+                <td>02-432-7530</td>
+            </tr>
+            <tr>
+                <td class="title">하스펫탈동물병원</td>
+                <td>중랑구</td>
+                <td>중랑구 면목로 442-1, 1층</td>
+                <td>02-435-2275</td>
+            </tr>
+            <tr>
+                <td class="title">더편한동물병원</td>
+                <td>성북구</td>
+                <td>서울 성북구 숭인로 50 108동 상가 2203호</td>
+                <td>02-982-7975</td>
+            </tr>
+            <tr>
+                <td class="title">드림동물병원</td>
+                <td>성북구</td>
+                <td>서울 성북구 동소문로 74 (동소문동5가)</td>
+                <td>02-928-7582</td>
+            </tr>
+            <tr>
+                <td class="title">미소동물병원</td>
+                <td>성북구</td>
+                <td>서울 성북구 종암로 91 (종암동)</td>
+                <td>02-929-1212</td>
+            </tr>
+            <tr>
+                <td class="title">태양동물병원</td>
+                <td>성북구</td>
+                <td>서울 성북구 돌곶이로 31</td>
+                <td>02-969-0075</td>
+            </tr>
+            <tr>
+                <td class="title">강북동물병원</td>
+                <td>강북구</td>
+                <td>서울 강북구 오현로 194 (번동)</td>
+                <td>02-985-7525</td>
+            </tr>
+            <tr>
+                <td class="title">애니케어 동물병원</td>
+                <td>강북구</td>
+                <td>서울 강북구 삼양로 499</td>
+                <td>02-996-1007</td>
+            </tr>
+            <tr>
+                <td class="title">호동물병원</td>
+                <td>강북구</td>
+                <td>서울 강북구 월계로 53</td>
+                <td>02-988-6543</td>
+            </tr>
+            <tr>
+                <td class="title">현대종합동물병원</td>
+                <td>강북구</td>
+                <td>서울 강북구 노해로 94</td>
+                <td>02-999-9110</td>
+            </tr>
+            <tr>
+                <td class="title">행복한동물병원</td>
+                <td>도봉구</td>
+                <td>서울 도봉구 도봉로 618 108호</td>
+                <td>02-996-8275</td>
+            </tr>
+            <tr>
+                <td class="title">하비동물병원</td>
+                <td>도봉구</td>
+                <td>도봉구 노해로65길 14</td>
+                <td>02-2038-9980</td>
+            </tr>
+            <tr>
+                <td class="title">유현동물병원</td>
+                <td>도봉구</td>
+                <td>서울 도봉구 방학로 187 105호(한화아파트상가)</td>
+                <td>02-955-2882</td>
+            </tr>
+            <tr>
+                <td class="title">도담동물병원</td>
+                <td>도봉구</td>
+                <td>서울 도봉구 도봉로 875</td>
+                <td>02-955-8400</td>
+            </tr>
+            <tr>
+                <td class="title">참동물병원</td>
+                <td>노원구</td>
+                <td>노원구 동일로 1530 다모아빌딩 108</td>
+                <td>02-952-0089</td>
+            </tr>
+            <tr>
+                <td class="title">중계이오동물병원</td>
+                <td>노원구</td>
+                <td>서울 노원구 한글비석로 245 두타빌A 111호</td>
+                <td>02-939-7579</td>
+            </tr>
+            <tr>
+                <td class="title">시마동물병원</td>
+                <td>노원구</td>
+                <td>노원구 동일로 1356 주공4단지 상가 402동 2층</td>
+                <td>02-908-7585</td>
+            </tr>
+            <tr>
+                <td class="title">은마로동물병원</td>
+                <td>노원구</td>
+                <td>서울 노원구 한글비석로 363</td>
+                <td>02-931-1575</td>
+            </tr>
+            <tr>
+                <td class="title">엔젤동물병원</td>
+                <td>노원구</td>
+                <td>서울 노원구 동일로 1104</td>
+                <td>02-977-0275</td>
+            </tr>
+            <tr>
+                <td class="title">닥터스종합동물병원</td>
+                <td>노원구</td>
+                <td>서울 노원구 월계로 336 상천빌딩 1층</td>
+                <td>02-905-7588</td>
+            </tr>
+            <tr>
+                <td class="title">로얄동물병원</td>
+                <td>은평구</td>
+                <td>서울 은평구 연서로 137 (구산동)</td>
+                <td>02-354-0975</td>
+            </tr>
+            <tr>
+                <td class="title">아이러브펫동물병원</td>
+                <td>은평구</td>
+                <td>서울 은평구 통일로 1050 롯데마트 은평점 2층</td>
+                <td>02-6975-5253</td>
+            </tr>
+            <tr>
+                <td class="title">새은평동물의료센터</td>
+                <td>은평구</td>
+                <td>서울 은평구 서오릉로 80 </td>
+                <td>02-358-7566</td>
+            </tr>
+            <tr>
+                <td class="title">오즈동물병원</td>
+                <td>서대문구</td>
+                <td>서울 서대문구 증가로 150 상가동 B209,B210호</td>
+                <td>02-305-5975</td>
+            </tr>
+            <tr>
+                <td class="title">프란다스동물병원</td>
+                <td>서대문구</td>
+                <td>서울 서대문구 거북골로 120 (남가좌동, DMC센트레빌)</td>
+                <td>02-309-8275</td>
+            </tr>
+            <tr>
+                <td class="title">홍익종합동물병원</td>
+                <td>마포구</td>
+                <td>마포구 독막로 45</td>
+                <td>02-325-2026</td>
+            </tr>
+            <tr>
+                <td class="title">푸른숲동물병원</td>
+                <td>마포구</td>
+                <td>서울 마포구 월드컵로 98</td>
+                <td>02-335-7577</td>
+            </tr>
+            <tr>
+                <td class="title">민병철동물병원</td>
+                <td>양천구</td>
+                <td>양천구 남부순환로 347</td>
+                <td>02-2695-1231</td>
+            </tr>
+            <tr>
+                <td class="title">우신동물병원</td>
+                <td>양천구</td>
+                <td>서울 양천구 중앙로 295 (신월동)</td>
+                <td>02-2693-8883</td>
+            </tr>
+            <tr>
+                <td class="title">닥터펫동물병원</td>
+                <td>양천구</td>
+                <td>서울 양천구 목동서로 170 홈플러스2층</td>
+                <td>02-2643-0283</td>
+            </tr>
+            <tr>
+                <td class="title">공원옆동물병원</td>
+                <td>양천구</td>
+                <td>서울 양천구 목동서로 349 목동 센트럴프라자 104호</td>
+                <td>02-2650-8275</td>
+            </tr>
+            <tr>
+                <td class="title">송정동물메디컬센터</td>
+                <td>강서구</td>
+                <td>서울 강서구 공항대로 39</td>
+                <td>02-2661-0530</td>
+            </tr>
+            <tr>
+                <td class="title">스마일동물병원</td>
+                <td>강서구</td>
+                <td>서울 강서구 수명로 74 발산시티타워 102호</td>
+                <td>02-2667-5666</td>
+            </tr>
+            <tr>
+                <td class="title">서울플러스 종합동물병원</td>
+                <td>강서구</td>
+                <td>서울 강서구 등촌로 55</td>
+                <td>02-2652-7515</td>
+            </tr>
+            <tr>
+                <td class="title">한샘동물병원</td>
+                <td>구로구</td>
+                <td>서울 구로구 경인로40길 25 (개봉동, 청실아파트)</td>
+                <td>02-2681-7585</td>
+            </tr>
+            <tr>
+                <td class="title">굿모닝동물병원</td>
+                <td>구로구</td>
+                <td>서울 구로구 개봉로 121</td>
+                <td>02-2060-8673</td>
+            </tr>
+            <tr>
+                <td class="title">캥거루동물병원</td>
+                <td>구로구</td>
+                <td>구로구 오류로 55</td>
+                <td>02-2066-2579</td>
+            </tr>
+            <tr>
+                <td class="title">다나은동물병원</td>
+                <td>구로구</td>
+                <td>서울 구로구 신도림로 7 110호</td>
+                <td>02-2672-7582</td>
+            </tr>
+            <tr>
+                <td class="title">벨라동물병원</td>
+                <td>구로구</td>
+                <td>구로구 구로중앙로34길 30</td>
+                <td>02-859-8775</td>
+            </tr>
+            <tr>
+                <td class="title">금나래동물병원</td>
+                <td>금천구</td>
+                <td>금천구 벚꽃로 30 롯데캐슬2차 211호</td>
+                <td>02-809-0075</td>
+            </tr>
+            <tr>
+                <td class="title">쿨펫동물병원</td>
+                <td>금천구</td>
+                <td>서울 금천구 두산로 71 (독산동)3층</td>
+                <td>02-861-2000</td>
+            </tr>
+            <tr>
+                <td class="title">금천24시K동물의료센터</td>
+                <td>금천구</td>
+                <td>서울 금천구 시흥대로 251 (시흥동, 도일산호시티빌)</td>
+                <td>02-808-2475</td>
+            </tr>
+            <tr>
+                <td class="title">금천종합동물병원</td>
+                <td>금천구</td>
+                <td>서울 금천구 독산로 188 (독산동)</td>
+                <td>02-894-8085</td>
+            </tr>
+            <tr>
+                <td class="title">노아동물병원</td>
+                <td>금천구</td>
+                <td>서울 금천구 금하로 745 (시흥동)</td>
+                <td>02-805-4758</td>
+            </tr>
+            <tr>
+                <td class="title">조정연동물병원</td>
+                <td>금천구</td>
+                <td>서울 금천구 금하로 679 (시흥동)</td>
+                <td>02-806-1541</td>
+            </tr>
+            <tr>
+                <td class="title">제일종합동물병원</td>
+                <td>금천구</td>
+                <td>서울 금천구 독산로 58 (시흥동)</td>
+                <td>02-894-3030</td>
+            </tr>
+            <tr>
+                <td class="title">은행나무동물병원</td>
+                <td>금천구</td>
+                <td>서울 금천구 금하로 694 (시흥동)</td>
+                <td>02-804-0975</td>
+            </tr>
+            <tr>
+                <td class="title">신길온동물병원</td>
+                <td>영등포구</td>
+                <td>서울 영등포구 신풍로 77 상가동C119호</td>
+                <td>02-848-7975</td>
+            </tr>
+            <tr>
+                <td class="title">왈츠동물병원</td>
+                <td>영등포구</td>
+                <td>서울 영등포구 가마산로 324 1층</td>
+                <td>02-834-7582</td>
+            </tr>
+            <tr>
+                <td class="title">우신종합동물병원</td>
+                <td>영등포구</td>
+                <td>서울 영등포구 신길로 168 (신길동)</td>
+                <td>02-836-6509</td>
+            </tr>
+            <tr>
+                <td class="title">아람동물병원</td>
+                <td>영등포구</td>
+                <td>서울 영등포구 도신로 225-1 1층</td>
+                <td>02-835-7975</td>
+            </tr>
+            <tr>
+                <td class="title">굿파파 24시 반려동물 건강검진센터</td>
+                <td>동작구</td>
+                <td>동작구 사당로 289</td>
+                <td>02-593-8275</td>
+            </tr>
+            <tr>
+                <td class="title">디아크동물종합병원</td>
+                <td>동작구</td>
+                <td>서울 동작구 장승배기로27길 18 1층</td>
+                <td>02-816-7582</td>
+            </tr>
+            <tr>
+                <td class="title">양지동물병원</td>
+                <td>관악구</td>
+                <td>서울 관악구 남부순환로191길 6</td>
+                <td>02-874-3535</td>
+            </tr>
+            <tr>
+                <td class="title">세계로동물병원</td>
+                <td>관악구</td>
+                <td>관악구 남부순환로 1497</td>
+                <td>02-868-3931</td>
+            </tr>
+            <tr>
+                <td class="title">러브펫종합동물병원</td>
+                <td>관악구</td>
+                <td>서울 관악구 남부순환로 1429 (신림동)</td>
+                <td>02-837-8875</td>
+            </tr>
+            <tr>
+                <td class="title">로잔동물의료센터</td>
+                <td>관악구</td>
+                <td>서울 관악구 관악로29길 3 (봉천동)</td>
+                <td>02-872-7588</td>
+            </tr>
+            <tr>
+                <td class="title">형제동물의료센터</td>
+                <td>관악구</td>
+                <td>서울 관악구 남부순환로 1747-1 (봉천동)</td>
+                <td>02-889-0575</td>
+            </tr>
+            <tr>
+                <td class="title">한동물병원</td>
+                <td>서초구</td>
+                <td>서울 서초구 동산로 66</td>
+                <td>02-577-3690</td>
+            </tr>
+            <tr>
+                <td class="title">내방동물병원</td>
+                <td>서초구</td>
+                <td>서울 서초구 서초대로 108 2층</td>
+                <td>02-3473-8274</td>
+            </tr>
+            <tr>
+                <td class="title">메디펫동물병원</td>
+                <td>서초구</td>
+                <td>서울 서초구 효령로 384 1층</td>
+                <td>02-586-7501</td>
+            </tr>
+            <tr>
+                <td class="title">위너스동물병원</td>
+                <td>강남구</td>
+                <td>강남구 역삼로 235</td>
+                <td>02-568-7975</td>
+            </tr>
+            <tr>
+                <td class="title">우리동생동물병원 강남청담점</td>
+                <td>강남구</td>
+                <td>서울 강남구 학동로81길 9 라테라스청담 103호</td>
+                <td>02-335-3333</td>
+            </tr>
+            <tr>
+                <td class="title">논현동물병원</td>
+                <td>강남구</td>
+                <td>서울 강남구 강남대로118길 47 (논현동)1층</td>
+                <td>02-3442-3785</td>
+            </tr>
+            <tr>
+                <td class="title">개포동물병원</td>
+                <td>강남구</td>
+                <td>서울 강남구 개포로 512, 1층</td>
+                <td>02-3412-7582</td>
+            </tr>
+            <tr>
+                <td class="title">펫토피아동물병원</td>
+                <td>송파구</td>
+                <td>서울 송파구 오금로 203</td>
+                <td>02-414-0075</td>
+            </tr>
+            <tr>
+                <td class="title">송파원동물병원</td>
+                <td>송파구</td>
+                <td>서울 송파구 백제고분로 432 2층</td>
+                <td>02-419-7571</td>
+            </tr>
+            <tr>
+                <td class="title">송파동물의료센터</td>
+                <td>송파구</td>
+                <td>서울 송파구 송파대로 378</td>
+                <td>02-424-3662</td>
+            </tr>
+            <tr>
+                <td class="title">25시 동물의료센터</td>
+                <td>송파구</td>
+                <td>서울 송파구 삼전로 80</td>
+                <td>02-419-1351</td>
+            </tr>
+            <tr>
+                <td class="title">송이종합동물병원</td>
+                <td>송파구</td>
+                <td>서울 송파구 가락로 210</td>
+                <td>02-415-7114</td>
+            </tr>
+            <tr>
+                <td class="title">가람동물병원</td>
+                <td>강동구</td>
+                <td>강동구 성내로 36</td>
+                <td>02-484-5502</td>
+            </tr>
+            <tr>
+                <td class="title">로얄동물메디컬센터 강동</td>
+                <td>강동구</td>
+                <td>서울 강동구 천호대로 1171 (길동)</td>
+                <td>02-457-0075</td>
+            </tr>
+            <tr>
+                <td class="title">시온동물병원</td>
+                <td>강동구</td>
+                <td>강동구 천호대로 1057</td>
+                <td>02-476-8275</td>
+            </tr>
+            <tr>
+                <td class="title">쥬라기동물병원</td>
+                <td>강동구</td>
+                <td>서울 강동구 올림픽로 703 (천호동)</td>
+                <td>02-488-7463</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
