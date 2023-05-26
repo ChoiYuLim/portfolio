@@ -7,7 +7,7 @@ function callThreeTimes(aaa) {
         // 함수를 매개변수로 받는 경우에는 
         // 매개변수명 뒤에 ()
         // 호출 사용합니다.
-        print(i);
+        aaa(i);
     }
 }
 
