@@ -95,19 +95,19 @@ Header
     <div id="footer-wrap">
         <div class="footer-container">
             <!-- <link rel="stylesheet" href="footer.css"> -->
-
+<script src="../footer.js"></script>
 <style>
     * {
         text-align: center;
     }
-    
+
     footer {
         background-color: lightgray;
         padding: 10px 0 5px 0;
     }
 
     .mb-5 {
-        margin-bottom: 10px !important;
+        margin-bottom: 20px !important;
     }
 
     .form-label {
@@ -115,21 +115,28 @@ Header
     }
 
     p>a {
-        margin-left: 5px;
-        margin-right: 5px;
         text-decoration: none;
         color: black;
+    }
+
+    .divider {
+        margin: 0 5px;
+    }
+
+    .clickable {
+        cursor: pointer;
+        font-weight: bold;
+        color: #008485;
     }
 </style>
 
 <footer class="footer-distributed">
     <div class="mb-5">
-        <a class="navbar-brand" href="./index.html" aria-label="Space">
-            <img class="navbar-brand-logo" src="../img/logo.png" alt="Image Description" width="40px" height="40px">
+        <a class="navbar-brand" href="./" aria-label="Space">
+            <img class="navbar-brand-logo" src="../img/logo.png" alt="logo" width="50px" height="50px">
         </a>
-
         <span class="d-block">
-            <label class="form-label">HANA PET</label>
+            <label class="clickable" onclick="window.location.href ='/'">HANA PET</label>
         </span>
     </div>
 
@@ -137,19 +144,19 @@ Header
 
         <p class="footer-links">
             <a class="link-1" href="/">Home</a>
-
+            <span class="divider">|</span>
             <a href="../favorite.html">FAVORITE</a>
-
+            <span class="divider">|</span>
             <a href="../adopt-center.html">입양 센터</a>
-
+            <span class="divider">|</span>
             <a href="../hospital.html">동물 병원</a>
-
+            <span class="divider">|</span>
             <a href="../playground.html">반려견 놀이터</a>
-
-            <a href="#">맨 위로</a>
+            <span class="divider">|</span>
+            <img class = "clickable" id="btnScrollToTop" src="../img/btn-to-top.png" width="25px" height="25px"></button>
         </p>
 
-        <p>HANA &copy; 2023</p>
+        <p>HANA PET &copy; 2023</p>
     </div>
 
 </footer> 
