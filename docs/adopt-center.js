@@ -54,7 +54,7 @@ function createTable() {
 
                 const adoptcenter = item.명칭;
                 console.log(adoptcenter);
-                if (FAVORITE_AC !== null && typeof FAVORITE_AC !== 'undefined' && FAVORITE_AC.some((favoriteItem) => favoriteItem.includes('adoptcenter'))) {
+                if (FAVORITE_AC !== null && typeof FAVORITE_AC !== 'undefined' && FAVORITE_AC.some((favoriteItem) => favoriteItem.includes(adoptcenter))) {
                     // 만약 즐겨찾기가 되어있다면
                     image.src = "./img/logo2.png";
                 } else {

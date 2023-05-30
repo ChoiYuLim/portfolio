@@ -6,7 +6,12 @@ function changeImage(event) {
     if (clickedImage.src.includes('img/logo_black.png')) {
         clickedImage.src = './img/logo2.png';
         alert('즐겨찾기에 추가했습니다.');
-        FAVORITE_PG.push(rowData);  // 즐겨찾기 배열에 정보 추가
+
+        if (FAVORITE_PG === null || typeof FAVORITE_PG === 'undefined') {
+            FAVORITE_PG = []; // FAVORITE_PG null 또는 undefined인 경우, 빈 배열로 초기화
+        }
+
+        FAVORITE_PG.push(rowData); // 즐겨찾기 배열에 정보 추가\
     } else {
         clickedImage.src = 'img/logo_black.png';
         alert('즐겨찾기를 해제했습니다.');
@@ -50,11 +55,11 @@ function createTable() {
                 const image = document.createElement("img");
 
                 const parkname = item.공원명;
-                
+
                 if (FAVORITE_PG !== null && typeof FAVORITE_PG !== 'undefined' && FAVORITE_PG.some((favoriteItem) => favoriteItem.includes(parkname))) {
                     // 만약 즐겨찾기가 되어있다면
                     image.src = "./img/logo2.png";
-                  } else {
+                } else {
                     // 만약 즐겨찾기가 안되어있다면
                     image.src = "./img/logo_black.png";
                 }
