@@ -9,20 +9,22 @@ function createPGTable() {
         tableBody.firstChild.remove();
     }
 
-    favoriteData.forEach((item) => {
-        const row = document.createElement("tr");
+    if (favoriteData !== null && favoriteData !== undefined) {
+        favoriteData.forEach((item) => {
+            const row = document.createElement("tr");
 
-        // 데이터 셀
-        Object.values(item).forEach((value) => {
-            if (value) {
-                const cell = document.createElement("td");
-                cell.textContent = value;
-                row.appendChild(cell);
-            }
+            // 데이터 셀
+            Object.values(item).forEach((value) => {
+                if (value) {
+                    const cell = document.createElement("td");
+                    cell.textContent = value;
+                    row.appendChild(cell);
+                }
+            });
+
+            tableBody.appendChild(row);
         });
-
-        tableBody.appendChild(row);
-    });
+    }
 }
 
 function createACTable() {
@@ -34,20 +36,23 @@ function createACTable() {
         tableBody.firstChild.remove();
     }
 
-    favoriteData.forEach((item) => {
-        const row = document.createElement("tr");
+    if (favoriteData !== null && favoriteData !== undefined) {
 
-        // 데이터 셀
-        Object.values(item).forEach((value) => {
-            if (value) {
-                const cell = document.createElement("td");
-                cell.textContent = value;
-                row.appendChild(cell);
-            }
+        favoriteData.forEach((item) => {
+            const row = document.createElement("tr");
+
+            // 데이터 셀
+            Object.values(item).forEach((value) => {
+                if (value) {
+                    const cell = document.createElement("td");
+                    cell.textContent = value;
+                    row.appendChild(cell);
+                }
+            });
+
+            tableBody.appendChild(row);
         });
-
-        tableBody.appendChild(row);
-    });
+    }
 }
 
 function createHPTable() {
@@ -57,21 +62,23 @@ function createHPTable() {
     while (tableBody.firstChild) {
         tableBody.firstChild.remove();
     }
+    
+    if (favoriteData !== null && favoriteData !== undefined) {
+        favoriteData.forEach((item) => {
+            const row = document.createElement("tr");
 
-    favoriteData.forEach((item) => {
-        const row = document.createElement("tr");
+            // 데이터 셀
+            Object.values(item).forEach((value) => {
+                if (value) {
+                    const cell = document.createElement("td");
+                    cell.textContent = value;
+                    row.appendChild(cell);
+                }
+            });
 
-        // 데이터 셀
-        Object.values(item).forEach((value) => {
-            if (value) {
-                const cell = document.createElement("td");
-                cell.textContent = value;
-                row.appendChild(cell);
-            }
+            tableBody.appendChild(row);
         });
-
-        tableBody.appendChild(row);
-    });
+    }
 }
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('#ac').addEventListener("click", createACTable);
