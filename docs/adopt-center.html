@@ -30,209 +30,87 @@
     <div id="wrapper">
         <header>
             <nav class="navbar navbar-expand-lg" style="background-color:rgb(255, 255, 255);">
-                <div class="container-fluid">
+    <div class="container-fluid">
 
-                    <a class="navbar-brand" href="/"><img src="../img/logo.png" width="50px" height="50px"><b>HANA
-                            PET</b></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/favorite.html">FAVORITE <img
-                                        src="../img/logo2.png" height="20px" width="20px"></a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    PLACE
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/adopt-center.html">입양 센터</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="/hospital.html">동물 병원</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="/playground.html">반려견 놀이터</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+        <a class="navbar-brand" href="/"><img src="../img/logo.png" width="50px" height="50px"><b>HANA
+                PET</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/favorite.html">FAVORITE <img
+                            src="../img/logo2.png" height="20px" width="20px"></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        PLACE
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/adopt-center.html">입양 센터</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/hospital.html">동물 병원</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/playground.html">반려견 놀이터</a></li>
+                    </ul>
+                </li>
+            </ul>
 
-                        <form class="col-12 col-lg-auto mb-0 mb-lg-0 me-lg-3 text-end" role="search">
-                            <input type="search" class="form-control form-control-dark mb-0" placeholder="Search..."
-                                aria-label="Search" onfocus="expandInputWidth(this)" style="text-align: left">
+            <form class="col-12 col-lg-auto mb-0 mb-lg-0 me-lg-3 text-end" role="search">
+                <input type="search" class="form-control form-control-dark mb-0" placeholder="Search..."
+                    aria-label="Search" onfocus="expandInputWidth(this)" style="text-align: left">
 
-                        </form>
-                    </div>
-                </div>
-            </nav>
-
+            </form>
+        </div>
+    </div>
+</nav>
         </header>
-
-        <script src="./adopt-center.js"></script>
+        <script src="./default.js"></script>
+<script src="./adopt-center.js"></script>
 <link rel="stylesheet" href="adopt-center.css">
-<section>
-    <h4>서울시 운영 입양센터</h4>
-    <div class="tbl-header">
-        <table cellpadding="0" cellspacing="0" border="0">
-            <colgroup>
-                <col style="width: 80px;">
-                <col style="width: 150px;">
-                <col style="width: 340px;">
-                <col style="width: 270px;">
-                <col style="width: auto;">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th scope="col" id='btn_favorite'></th>
-                    <th scope="col">명칭</th>
-                    <th scope="col">현황사진</th>
-                    <th scope="col">위치 및 문의처</th>
-                    <th scope="col">홈페이지 등</th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-    <div class="tbl-content">
-        <table cellpadding="0" cellspacing="0" border="0">
-            <colgroup>
-                <col style="width: 80px;">
-                <col style="width: 150px;">
-                <col style="width: 340px;">
-                <col style="width: 270px;">
-                <col style="width: auto;">
-            </colgroup>
-            <tbody>
-                <tr>
-                    <td><img src="img/logo_black.png" width="30px" height="30px"></td>
-                    <td><strong>서울동물복지<br>지원센터(마포)</strong></td>
-                    <td><img alt="서울동물복지지원센터"
-                            src="https://animal.seoul.go.kr/humanframe/theme/sacc/assets/images/contents/img_com01.png">
-                    </td>
-                    <td>
-                        마포구 매봉산로 31, 에스플렉스센터 지하1층
-                        <br>
-                        02-2124-2839
-                    </td>
-                    <td>
-                        <a href="http://animal.seoul.go.kr">홈페이지</a>
-                        <br>
-                        <a href="http://cafe.naver.com/seoulanimalcare">네이버카페</a>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="img/logo_black.png" width="30px" height="30px"></td>
-                    <td><strong>서울동물복지<br>지원센터(구로)</strong></td>
-                    <td><img alt="서울고양이 입양카페"
-                            src="https://animal.seoul.go.kr/humanframe/theme/sacc/assets/images/contents/img_com02.png">
-                    </td>
-                    <td>
-                        구로구 경인로 472
-                        <br>
-                        02-2636-7650
-                    </td>
-                    <td>
-                        <a href="https://cafe.naver.com/seoulcatcafe">네이버카페</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<section>
-    <h4>자치구 운영 입양센터</h4>
-    <div class="tbl-header">
-        <table cellpadding="0" cellspacing="0" border="0">
-            <colgroup>
-                <col style="width: 80px;">
-                <col style="width: 150px;">
-                <col style="width: 340px;">
-                <col style="width: 270px;">
-                <col style="width: auto;">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">명칭</th>
-                    <th scope="col">현황사진</th>
-                    <th scope="col">위치 및 문의처</th>
-                    <th scope="col">홈페이지 등</th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-    <div class="tbl-content">
-        <table cellpadding="0" cellspacing="0" border="0">
-            <colgroup>
-                <col style="width: 80px;">
-                <col style="width: 150px;">
-                <col style="width: 340px;">
-                <col style="width: 270px;">
-                <col style="width: auto;">
-            </colgroup>
-            <tbody>
-                <tr>
-                    <td><img src="img/logo_black.png" width="30px" height="30px"></td>
-                    <td><strong>리본<br>Re:born<br>(강동구 유기동물 입양센터)</strong></td>
-                    <td><img alt="리본Re:born(강동구 유기동물 입양센터)"
-                            src="https://animal.seoul.go.kr/humanframe/theme/sacc/assets/images/contents/img_com03.png">
-                    </td>
-                    <td>
-                        강동구 양재대로81길 73 (성내동)
-                        <br>
-                        070-4163-7350
-                    </td>
-                    <td>
-                        <a href="http://www.reborncenter.org">홈페이지</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="img/logo_black.png" width="30px" height="30px"></td>
-                    <td><strong>서초<br>동물사랑센터<br>(서초구 유기동물 입양센터)</strong></td>
-                    <td><img alt="서초 동물사랑센터(서초구 유기동물 입양센터)"
-                            src="https://animal.seoul.go.kr/humanframe/theme/sacc/assets/images/contents/img_com04.png">
-                    </td>
-                    <td>
-                        서초구 양재천로19길 22(양재동)
-                        <br>
-                        02-6956-7980
-                    </td>
-                    <td>
-                        <a href="http://www.seocho.go.kr/site/animal/main.do">홈페이지</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="img/logo_black.png" width="30px" height="30px"></td>
-                    <td><strong>노원<br>댕댕하우스<br>(노원구 유기동물 입양센터)</strong></td>
-                    <td><img alt="노원 댕댕하우스(노원구 유기동물 입양센터)"
-                            src="https://animal.seoul.go.kr/humanframe/theme/sacc/assets/images/contents/img_com05.png">
-                    </td>
-                    <td>
-                        노원구 수락산로 258
-                        <br>
-                        02-933-8500
-                    </td>
-                    <td>
-                        <a href="http://www.nowonhouse.kr">홈페이지</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
+<div class="wrapper" id="wrapper">
+    <section>
+        <h4>서울시 운영 입양센터</h4>
+        <div>
+            <table class="tbl-header">
+                <colgroup>
+                    <col style="width: 10%;">
+                    <col style="width: 25%;">
+                    <col style="width: 30%;">
+                    <col style="width: 30%;">
+                </colgroup>
+            </table>
+            <table class="tbl-content">
+                <colgroup>
+                    <col style="width: 10%;">
+                    <col style="width: 25%;">
+                    <col style="width: 30%;">
+                    <col style="width: 30%;">
+                </colgroup>
+            </table>
+            <script>
+                createTable();
+            </script>
+        </div>
+    </section>
+</div>
     </div>
 
-    <footer>
-        <!-- <link rel="stylesheet" href="footer.css"> -->
-<script src="../footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
+<footer>
+    <script src="../footer.js"></script>
 <style>
     * {
         text-align: center;
@@ -297,11 +175,6 @@
     </div>
 
 </footer>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
-</body>
+</footer>
 
 </html>
