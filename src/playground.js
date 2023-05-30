@@ -48,13 +48,13 @@ function createTable() {
                 const row = document.createElement("tr");
                 const cell = document.createElement("td");
                 const image = document.createElement("img");
-                console.log(item.공원명);
 
                 const parkname = item.공원명;
-                if (FAVORITE_PG.some((favoriteItem) => favoriteItem.includes(parkname))) {
+                
+                if (FAVORITE_PG !== null && typeof FAVORITE_PG !== 'undefined' && FAVORITE_PG.some((favoriteItem) => favoriteItem.includes(parkname))) {
                     // 만약 즐겨찾기가 되어있다면
                     image.src = "./img/logo2.png";
-                } else {
+                  } else {
                     // 만약 즐겨찾기가 안되어있다면
                     image.src = "./img/logo_black.png";
                 }
