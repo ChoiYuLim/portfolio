@@ -1,5 +1,18 @@
 ---
 layout: base
 ---
+<script src="./default.js"></script>
+<script src="./favorite.js"></script>
 
-
+<link rel="stylesheet" href="favorite.css">
+<div class="wrapper" id="wrapper">
+    <section>
+        <h4>FAVORITE</h4>
+        <div class="button-container">
+            <button class="button" id="ac">입양 센터</button>
+            <button class="button" id="hp">동물 병원</button>
+            <button class="button" id="pg">반려견 놀이터</button>
+        </div>
+    </section>
+    {%include favorite-ac.html%}
+</div>
