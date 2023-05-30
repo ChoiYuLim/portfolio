@@ -6,11 +6,12 @@ h4 {
 }
 
 section {
-    padding: 10px 200px;
+    padding: 50px 200px;
 }
 
 #map {
     width: 100%;
+    margin-bottom: 20px;
 }
 
 table {
