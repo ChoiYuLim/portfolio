@@ -68,7 +68,7 @@ function createTable() {
                 Object.values(item).forEach((value) => {
                     const cell = document.createElement("td");
                     console.log(value);
-                    if (value.startsWith("http")) {
+                    if (value.startsWith("/")) {
                         const img = document.createElement("img");
                         img.src = `${value}`;
                         cell.appendChild(img);
