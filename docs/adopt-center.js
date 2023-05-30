@@ -6,7 +6,11 @@ function changeImage(event) {
     if (clickedImage.src.includes('img/logo_black.png')) {
         clickedImage.src = './img/logo2.png';
         alert('즐겨찾기에 추가했습니다.');
-        FAVORITE_AC.push(rowData);  // 즐겨찾기 배열에 정보 추가
+        if (FAVORITE_AC === null || typeof FAVORITE_AC === 'undefined') {
+            FAVORITE_AC = []; // FAVORITE_AC가 null 또는 undefined인 경우, 빈 배열로 초기화
+          }
+          
+          FAVORITE_AC.push(rowData); // 즐겨찾기 배열에 정보 추가
     } else {
         clickedImage.src = 'img/logo_black.png';
         alert('즐겨찾기를 해제했습니다.');
