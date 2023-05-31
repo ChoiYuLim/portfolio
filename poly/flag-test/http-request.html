@@ -1,43 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-
-<body>
-    <div id="result"></div>
-    <script>
-        let xhr = new XMLHttpRequest();
-        xhr.open("GET", "flags.json");
-        xhr.send();
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                let flags = JSON.parse(xhr.responseText);
-                console.log(flags);
-                renderHTML(flags);
-            }
-        };
-
-        function renderHTML(contents){
-            let htmlString = "";
-            for(let content of contents){
-                htmlString += `
-                <h2>${content.name}</h2>
-                <ul>
-                    <img src="${content.image}" width="200px">
-                </ul>
-                <hr>
-                `;
-            }
-            document.getElementById("result").innerHTML = htmlString;
+    <style>
+        .table {
+            border: 1px solid black;
         }
 
+        .table img {
+            width:50px;
+            border-radius: 50%;
+        }
+
+        .table tr:nth-child(odd) {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        function getHttpRequest(url, callback) {
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function(event){
+                if(request.readyState == 4){
+                    if(request.status == 200){
+                        // 요청이 정상적으로 처리 된 경우
+                        console.log("success");
+                        //console.log(request.responseText)
+                        callback(request.responseText);
+                    } else {
+                        // 에러가 발생한 경우
+                    }
+                }
+            } 
+
+            const method = "GET";
+            request.open('get',url,true);
+            request.send();
+        }
+
+        const url = "flags.json";   
+        getHttpRequest(url, function(response) {
+            // 문자열, 자바스크립트 객체로 변경
+            var json = JSON.parse(response);
+
+            for (var object in json) {
+                // 이미지 객체 프로퍼티에
+                // 이미지 html 요소객체 생성해서 저장
+                let flag = document.createElement('img');
+                flag.src = json[object].image;
+                json[object].image = flag;
+            }
+
+            // 테이블 생성
+            let table = createTable(json);
+
+            // body 다음에 추가
+            document.body.appendChild(table);
+        });
+
+        function createTable(obj) {
+            //테이블
+            let table = document.createElement('table');
+            table.classList.add("table");
+
+            let i = 1;
+
+            // tbody
+            let tbody = document.createElement('tbody');
+            // 객체의 배열, 배열 foreach
+            // 열
+            obj.forEach(el => {
+                let tr = document.createElement('tr');
+                //console.log(el);
+                //console.log(Object.keys(el));
+                // 행
+
+                let td = document.createElement('td');
+                td.innerHTML = i++;
+                tr.appendChild(td);
+
+
+                Object.keys(el).forEach(item=>{
+                    // console.log(item);
+                    if(typeof(el[item]) == "object") {
+                        tr.appendChild(el[item]);
+                    } else {
+                        let td = document.createElement('td');
+                        td.innerHTML = el[item];
+                        tr.appendChild(td);
+                    }                  
+                })
+
+                tbody.appendChild(tr);
+            });
+
+            // 테이블에, tbody 추가하여
+            table.appendChild(tbody); 
+            // 테이블 반환
+            return table;
+        }
     </script>
 </body>
-
 </html>
