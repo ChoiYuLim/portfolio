@@ -6,12 +6,17 @@ layout: base
 
 <link rel="stylesheet" href="/assets/css/favorite.css">
 <div class="wrapper" id="wrapper">
-    <section>
+    <section id = "sec">
         <h4>FAVORITE</h4>
-        <div class="button-container">
-            <button class="button" id="ac">입양 센터</button>
-            <button class="button" id="hp">동물 병원</button>
-            <button class="button" id="pg">반려견 놀이터</button>
+        <div class="outer-container">
+            <div class="button-container">
+                <button class="button" id="ac">입양 센터</button>
+                <button class="button" id="hp">동물 병원</button>
+                <button class="button" id="pg">반려견 놀이터</button>
+            </div>
+            <div class="img">
+                <img src="/img/logo2.png" width="40px" height="40px">
+            </div>
         </div>
     </section>
     {%include favorite-ac.html%}

@@ -37,7 +37,7 @@ body:-ms-input-placeholder {
 }
 
 .wrapper {
-  background-image: url('img/background.jpg');
+  background-image: url('/img/background.jpg');
   opacity: 0.8;
   background-size: cover;
   background-position: center;
