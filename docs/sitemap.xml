@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/about.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/adopt-center.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/favorite.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/hospital.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/lay2.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/lay3.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/lay5.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/login.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/playground.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/signup.html</loc>
+</url>
+</urlset>
